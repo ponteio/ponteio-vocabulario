@@ -1,0 +1,40 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix pon:  <https://ponteio.org/vocabulario/> .
+
+# -----------------------------------------------------------------
+# Esquema conceitual PONTEIO
+# Versão 0.1 — julho de 2026
+# Desvio de R56: termos irredutíveis têm prefLabel apenas na língua
+# de origem. Outras línguas recebem glosas, nunca tradução canônica.
+# -----------------------------------------------------------------
+
+pon:ConceptScheme a skos:ConceptScheme ;
+    dct:title "Vocabulário PONTEIO"@pt ;
+    dct:description "Vocabulário controlado de curadoria musical para o circuito afro-atlântico"@pt ;
+    dct:created "2026-07"^^xsd:gYearMonth ;
+    dct:language "pt" .
+
+# -----------------------------------------------------------------
+# Exemplos de termos — a serem co-desenhados com curadores (R41)
+# -----------------------------------------------------------------
+
+pon:ijesa a skos:Concept ;
+    skos:inScheme pon:ConceptScheme ;
+    skos:prefLabel "ijexá"@pt ;
+    # Irredutível: não existe prefLabel em inglês (FF-04)
+    skos:altLabel "ijesá"@es ;
+    skos:scopeNote "Toque e dança de origem iorubá associado ao orixá Oxum. No candomblé brasileiro, designa tanto o ritmo quanto a forma de dançar. Em Cuba (Regla de Ocha), aparece como 'ijesá' com desenvolvimento local parcialmente divergente."@pt ;
+    skos:scopeNote "Ritmo y danza de origen yoruba asociado al oricha Oshún. En Cuba, se desarrolla como variante local del toque litúrgico."@es .
+
+pon:semba a skos:Concept ;
+    skos:inScheme pon:ConceptScheme ;
+    skos:prefLabel "semba"@pt ;
+    # Irredutível: não tem equivalente traduzível
+    skos:scopeNote "Gênero musical e de dança angolano, ancestral da kizomba e historicamente ligado ao samba brasileiro pela diáspora. O termo designa tanto o gênero quanto o movimento característico de umbigada."@pt .
+
+pon:maracatu a skos:Concept ;
+    skos:inScheme pon:ConceptScheme ;
+    skos:prefLabel "maracatu"@pt ;
+    skos:scopeNote "Manifestação cultural afro-brasileira com duas vertentes principais: maracatu nação (de baque virado, Recife) e maracatu rural (de baque solto). O termo é irredutível em contexto rítmico."@pt .
