@@ -1,0 +1,27 @@
+# mise.toml — ponteio-vocabulario. O vocabulário é a ponte (R45): validar é barato,
+# e um termo malformado se propaga para o app por cópia.
+[tools]
+python = "3.13"
+
+[tasks.setup]
+run = "python3 -m pip install --quiet --user rdflib"
+
+[tasks."check:turtle"]
+description = "O Turtle parseia"
+run = "python3 -c \"import rdflib,sys,pathlib; [rdflib.Graph().parse(p) for p in pathlib.Path('vocabulario').rglob('*.ttl')]; print('  ✓ turtle válido')\""
+
+[tasks."check:skos"]
+description = "FF-04: prefLabel em pt-BR, tag BCP 47, sem forma canônica em inglês"
+run = "python3 scripts/validar_skos.py"
+
+[tasks.lint]
+depends = ["check:turtle"]
+
+[tasks.test]
+depends = ["check:skos"]
+
+[tasks.checks]
+depends = ["check:turtle", "check:skos"]
+
+[tasks.ci]
+depends = ["lint", "test", "checks"]
