@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "PONTEIO — vocabulário SKOS"
+message: "Se você usa este vocabulário, cite-o assim."
+type: dataset
+authors:
+  - family-names: Figueira
+    given-names: Fernando Marques
+    affiliation: "Universidade Federal do Rio Grande do Norte"
+repository-code: "https://github.com/ponteio/ponteio-vocabulario"
+abstract: >-
+  Vocabulário controlado em SKOS para curadoria musical culturalmente informada.
+  Termos com prefLabel em português e etiqueta BCP 47; sem forma canônica em
+  inglês, por decisão (R19, R20, FF-04). É o único acoplamento permitido entre o
+  corpus PONTEIO e o aplicativo de estudo (R45).
+keywords:
+  - SKOS
+  - vocabulário controlado
+  - curadoria musical
+  - microtiming
+license: CC-BY-SA-4.0
