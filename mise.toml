@@ -2,15 +2,23 @@
 # e um termo malformado se propaga para o app por cópia.
 [tools]
 python = "3.13"
+uv = "latest"
+
+# rdflib é biblioteca: venv do projeto, não instalação global.
+[env]
+_.python.venv = { path = ".venv", create = true }
 
 [tasks.setup]
-run = "python3 -m pip install --quiet --user rdflib"
+description = "Garante as dependências Python no venv do projeto"
+run = "uv pip install --quiet rdflib"
 
 [tasks."check:turtle"]
+depends = ["setup"]
 description = "O Turtle parseia"
 run = "python3 -c \"import rdflib,sys,pathlib; [rdflib.Graph().parse(p) for p in pathlib.Path('vocabulario').rglob('*.ttl')]; print('  ✓ turtle válido')\""
 
 [tasks."check:skos"]
+depends = ["setup"]
 description = "FF-04: prefLabel em pt-BR, tag BCP 47, sem forma canônica em inglês"
 run = "python3 scripts/validar_skos.py"
 

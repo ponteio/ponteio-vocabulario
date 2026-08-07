@@ -15,5 +15,4 @@ jobs:
     name: vocabulário — Turtle e FF-04
     uses: gicc-ufrn/.github/.github/workflows/mise-ci.yml@main
     with:
-      antes: pip install rdflib
       tarefas: ci
