@@ -1,5 +1,7 @@
 # ponteio-vocabulario
 
+[![CI](https://github.com/ponteio/ponteio-vocabulario/actions/workflows/ci.yml/badge.svg)](https://github.com/ponteio/ponteio-vocabulario/actions/workflows/ci.yml)
+
 Vocabulário controlado multilíngue do PONTEIO, modelado em SKOS com desvio
 deliberado (R56): para termos culturalmente irredutíveis, `skos:prefLabel`
 existe apenas na língua de origem. Outras línguas recebem glosas
